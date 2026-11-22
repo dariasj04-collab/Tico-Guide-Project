@@ -1,0 +1,225 @@
+/*     Root    */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+
+/*========== Colors ===========*/
+
+--color-green: #205041;    
+--color-light: #F5F0E6;   
+--color-surface: #FFFBF3; 
+--color-mint: #C8DBC6;     
+--color-pink: #F6C9DD;   
+--color-yellow: #FBE7A1;   
+--color-coral: #EE716C;    
+
+
+/* ========= Sizes ========= */
+
+--size-xs: .5rem;    /* 8px */
+--size-sm: 1rem;     /* 16px */
+--size-md: 1.5rem;   /* 24px */
+--size-lg: 2rem;     /* 32px */
+--size-xl: 4rem;     /* 64px */
+
+--size-block: 60.25rem;  /* 964px */
+--size-canvas: 90rem;    /* 1440px */
+
+/* Radius Size */
+   
+--radius-card: 1.25rem;  /* 20px */
+--radius-pill: 100px;
+--radius-shape: 10rem 10rem 10rem 1.75rem;  /* foto con forma */
+
+
+/* Details */
+
+--border: 1px solid rgba(32, 80, 65, .2);
+--shadow: 0 1.25rem 2.5rem rgba(20, 52, 42, .22);
+--tracking: .16em;  /* rótulos y etiquetas en mayúsculas */
+
+
+/*   Fonts   */
+
+--font-h1: 600 clamp(2.25rem, 3.75vw, 3.375rem)/1.08 "Poppins", sans-serif;
+--font-h2: 500 clamp(1.625rem, 2.36vw, 2.125rem)/1.15 "Poppins", sans-serif;
+--font-h3: 500 clamp(1.375rem, 1.81vw, 1.625rem)/1.15 "Poppins", sans-serif;
+--font-h4: 500 clamp(1.125rem, 1.39vw, 1.25rem)/1.2 "Poppins", sans-serif;
+--font-p: 400 .9375rem/1.6 "Manrope", sans-serif;
+--font-link: 700 .9375rem/1.2 "Manrope", sans-serif;
+--font-label: 700 .75rem/1 "Manrope", sans-serif;
+
+}
+
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   font-family: "Manrope", sans-serif;
+
+}
+
+html {
+   scroll-behavior: smooth;
+}
+
+body {
+   background-color: var(--color-light);
+   color: var(--color-dark);
+}
+
+img {
+   max-width: 100%;
+   width: 100%;
+   object-fit: cover;
+   display: block;
+}
+
+a {
+   text-decoration: none;
+   color: inherit;
+}
+
+/* Components */
+
+.container {
+   width: min(100% - 2 * var(--size-lg), var(--size-block));
+   margin-inline: auto;
+}
+
+h1, .heading--h1 {
+   font: var(--font-h1);
+
+}
+
+h2, .heading--h2 {
+   font: var(--font-h2);
+
+}
+h3, .heading--h3 {
+   font: var(--font-h3);
+
+}
+h4, .heading--h4 {
+   font: var(--font-h4);
+
+}
+
+p, li, .font--p {
+   font: var(--font-p);
+}
+
+a, .font--link {
+   font: var(--font-link);
+}
+
+ul, ol {
+   list-style: none;
+}
+
+/* Rótulo sobre los títulos de sección */
+.eyebrow {
+   font: var(--font-label);
+   letter-spacing: var(--tracking);
+   text-transform: uppercase;
+}
+
+/* Etiqueta tipo píldora */
+.tag {
+   font: var(--font-label);
+   letter-spacing: var(--tracking);
+   text-transform: uppercase;
+   display: inline-block;
+   padding: var(--size-xs) var(--size-sm);
+   border-radius: var(--radius-pill);
+
+   &.tag--mint { background-color: var(--color-mint); }
+   &.tag--pink { background-color: var(--color-pink); }
+   &.tag--yellow { background-color: var(--color-yellow); }
+   &.tag--dark {
+      background-color: var(--color-dark);
+      color: var(--color-light);
+   }
+}
+
+.btn {
+   padding: var(--size-sm) var(--size-md);
+   min-height: 48px;
+   display: inline-flex;
+   gap: var(--size-xs);
+   align-items: center;
+   border: 2px solid transparent;
+   border-radius: var(--radius-pill);
+   font: var(--font-link);
+   cursor: pointer;
+
+
+   &.btn--dark {
+      background-color: var(--color-dark);
+      color: var(--color-light);
+
+   }
+
+   /* Sobre fondos oscuros (hero, bloque verde) */
+   &.btn--light {
+      background-color: var(--color-yellow);
+      color: var(--color-dark);
+   }
+
+   /* "Ver todos los destinos", "Ver itinerario" */
+   &.btn--outline {
+      background-color: transparent;
+      border-color: currentColor;
+   }
+
+   &:hover{
+      opacity: 80%;
+   }
+
+   transition: opacity .3s;
+}
+
+
+
+/*========= Header ======== */
+
+.header{
+    background-color: var(--color-light);
+    border-bottom: var(--border);
+
+}
+
+.header__block{
+    display: flex;
+    gap: var(--size-sm) var(--size-md);
+    padding-top: 12px;
+    padding-bottom: 12px;
+    justify-content: space-around;
+
+}
+
+.header__brand{
+    display: flex;
+    gap: .75rem;
+    align-items: center;
+
+}
+
+.header__slogan{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.header__logo{
+    width: 3.375rem;
+    height: 3.375rem;
+    
+}
+
+.header__nav{
+    display: flex;
+    gap: .25rem 2.5rem;
+
+}
