@@ -110,7 +110,10 @@ h3, .heading--h3 {
 }
 h4, .heading--h4 {
    font: var(--font-h4);
+}
 
+h1, h2, h3, h4{
+    line-height: 1.1;
 }
 
 p, li, .font--p {
@@ -124,6 +127,7 @@ a, .font--link {
 ul, ol {
    list-style: none;
 }
+
 
 /* Rótulo sobre los títulos de sección */
 .eyebrow {
@@ -193,28 +197,29 @@ ul, ol {
 
 /*========= Header ======== */
 
-.header{
+.header {
     background-color: var(--color-light);
     border-bottom: var(--border);
     padding: var(--size-xs) var(--size-sm);
-
+    position: sticky;
+    top: 0;
 }
 
-.header__block{
+.header__block {
    display: flex;
    gap: var(--size-md);
    justify-content: space-between;
    align-items: center;
 }
 
-.header__brand{
+.header__brand {
     display: flex;
     align-items: center;
     gap: var(--size-sm)
 
 }
 
-.header__slogan{
+.header__slogan {
     display: flex;
     flex-direction: column;
   
@@ -225,20 +230,21 @@ ul, ol {
 }
 
 
-.header__logo{
+.header__logo {
     width: 3.375rem;
     height: 3.375rem;
     
 }
 
-.header__nav{
+.header__nav {
     display: flex;
     gap: var(--size-lg);
 
 }
 
-/* Todos los enlaces: trazo coral escondido (0% de ancho) */
-.header__nav-menu{
+/* Line hover to active link */
+
+.header__nav-menu {
     display: inline-block;
     padding-bottom: var(--size-xs);
     background-image: url(../media/trazo-coral.svg);
@@ -248,17 +254,108 @@ ul, ol {
     transition: background-size .7s;
 }
 
-/* Hover: el trazo crece hasta el 100% y se dibuja de izquierda a derecha */
-.header__nav-menu:hover{
+
+.header__nav-menu:hover {
     background-size: 100% 11px;
 }
 
-/* Página activa: trazo verde, siempre visible */
-.header__nav-menu--active{
+
+.header__nav-menu--active {
     font-weight: 700;
     background-image: url(../media/trazo-verde.svg);
     background-size: 100% 11px;
 }
+
+
+/* =========== Hero banner =========== */
+
+
+.hero__background {
+   min-height: 420px;
+   padding: var(--size-xl) var(--size-sm);
+   color: var(--color-light);
+
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+
+   background: linear-gradient(90deg, rgba(20, 52, 42, .88) 0%, rgba(20, 52, 42, .62) 55%, rgba(20, 52, 42, .25) 100%), url("../media/hero-inicio.jpg");
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-color: var(--color-green);
+}
+
+.hero__block {
+   display: flex;
+   flex-direction: column;
+   gap: var(--size-md);
+   width: 100%;
+
+   & .eyebrow {
+      color: var(--color-yellow);
+   }
+
+   & h1 {
+      max-width: 38.75rem;
+   }
+
+   & p {
+      max-width: 32.5rem;
+   }
+
+}
+
+.hero__links {
+   display: flex;
+   flex-wrap: wrap;
+   gap: var(--size-sm);
+
+}
+
+/* Banner per sections */
+
+.hero__background--planifica{
+   background: linear-gradient(90deg, rgba(20, 52, 42, .88) 0%, rgba(20, 52, 42, .62) 55%, rgba(20, 52, 42, .25) 100%), url("../media/hero-planifica.jpg");
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+
+}
+
+.hero__background--muevete{
+   background: linear-gradient(90deg, rgba(20, 52, 42, .88) 0%, rgba(20, 52, 42, .62) 55%, rgba(20, 52, 42, .25) 100%), url("../media/hero-muevete.jpg");
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+
+   & h1 {
+    max-width: 440px;
+}
+
+  & p {
+    max-width: 380px;
+}
+
+}
+
+.hero__background--explora{
+   background: linear-gradient(90deg, rgba(20, 52, 42, .88) 0%, rgba(20, 52, 42, .62) 55%, rgba(20, 52, 42, .25) 100%), url("../media/hero-explora.jpg");
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+
+}
+
+.hero__background--descubre{
+   background: linear-gradient(90deg, rgba(20, 52, 42, .88) 0%, rgba(20, 52, 42, .62) 55%, rgba(20, 52, 42, .25) 100%), url("../media/hero-descubre.jpg");
+   background-position: center bottom;
+   background-repeat: no-repeat;
+   background-size: cover;
+
+}
+
+
 
 
 
