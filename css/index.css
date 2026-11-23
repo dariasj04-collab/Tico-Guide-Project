@@ -42,13 +42,13 @@
 
 /*   Fonts   */
 
---font-h1: 600 clamp(2.25rem, 3.75vw, 3.375rem)/1.08 "Poppins", sans-serif;
---font-h2: 500 clamp(1.625rem, 2.36vw, 2.125rem)/1.15 "Poppins", sans-serif;
---font-h3: 500 clamp(1.375rem, 1.81vw, 1.625rem)/1.15 "Poppins", sans-serif;
---font-h4: 500 clamp(1.125rem, 1.39vw, 1.25rem)/1.2 "Poppins", sans-serif;
---font-p: 400 .9375rem/1.6 "Manrope", sans-serif;
---font-link: 700 .9375rem/1.2 "Manrope", sans-serif;
---font-label: 700 .75rem/1 "Manrope", sans-serif;
+--font-h1: 600 clamp(2.25rem, 3.75vw, 3.375rem) "Poppins", sans-serif;
+--font-h2: 500 clamp(1.625rem, 2.36vw, 2.125rem) "Poppins", sans-serif;
+--font-h3: 500 clamp(1.375rem, 1.81vw, 1.625rem) "Poppins", sans-serif;
+--font-h4: 500 clamp(1.125rem, 1.39vw, 1.25rem) "Poppins", sans-serif;
+--font-p: 400 .9375rem "Manrope", sans-serif;
+--font-link: 500 .9375rem "Manrope", sans-serif;
+--font-label: 700 .75rem "Manrope", sans-serif;
 
 }
 
@@ -66,7 +66,7 @@ html {
 
 body {
    background-color: var(--color-light);
-   color: var(--color-dark);
+   color: var(--color-green);   /* CAMBIO: era --color-dark, que ya no existe */
 }
 
 img {
@@ -83,9 +83,16 @@ a {
 
 /* Components */
 
-.container {
-   width: min(100% - 2 * var(--size-lg), var(--size-block));
-   margin-inline: auto;
+/* CAMBIO: .block y .section reemplazan a .container */
+.block {
+   max-width: var(--size-block);
+   margin: 0 auto;
+}
+
+.section {
+   padding: var(--size-lg) var(--size-sm);
+   max-width: var(--size-canvas);
+   margin: 0 auto;
 }
 
 h1, .heading--h1 {
@@ -138,7 +145,7 @@ ul, ol {
    &.tag--pink { background-color: var(--color-pink); }
    &.tag--yellow { background-color: var(--color-yellow); }
    &.tag--dark {
-      background-color: var(--color-dark);
+      background-color: var(--color-green);   /* CAMBIO */
       color: var(--color-light);
    }
 }
@@ -156,7 +163,7 @@ ul, ol {
 
 
    &.btn--dark {
-      background-color: var(--color-dark);
+      background-color: var(--color-green);   /* CAMBIO */
       color: var(--color-light);
 
    }
@@ -164,7 +171,7 @@ ul, ol {
    /* Sobre fondos oscuros (hero, bloque verde) */
    &.btn--light {
       background-color: var(--color-yellow);
-      color: var(--color-dark);
+      color: var(--color-green);   /* CAMBIO */
    }
 
    /* "Ver todos los destinos", "Ver itinerario" */
@@ -182,35 +189,41 @@ ul, ol {
 
 
 
+
+
 /*========= Header ======== */
 
 .header{
     background-color: var(--color-light);
     border-bottom: var(--border);
+    padding: var(--size-xs) var(--size-sm);
 
 }
 
 .header__block{
-    display: flex;
-    gap: var(--size-sm) var(--size-md);
-    padding-top: 12px;
-    padding-bottom: 12px;
-    justify-content: space-around;
-
+   display: flex;
+   gap: var(--size-md);
+   justify-content: space-between;
+   align-items: center;
 }
 
 .header__brand{
     display: flex;
-    gap: .75rem;
     align-items: center;
+    gap: var(--size-sm)
 
 }
 
 .header__slogan{
     display: flex;
     flex-direction: column;
+  
 
+    & .heading--h4 {
+      font-weight: 600;
+    }
 }
+
 
 .header__logo{
     width: 3.375rem;
@@ -220,6 +233,41 @@ ul, ol {
 
 .header__nav{
     display: flex;
-    gap: .25rem 2.5rem;
+    gap: var(--size-lg);
 
 }
+
+/* Todos los enlaces: trazo coral escondido (0% de ancho) */
+.header__nav-menu{
+    display: inline-block;
+    padding-bottom: var(--size-xs);
+    background-image: url(../media/trazo-coral.svg);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 0% 11px;
+    transition: background-size .7s;
+}
+
+/* Hover: el trazo crece hasta el 100% y se dibuja de izquierda a derecha */
+.header__nav-menu:hover{
+    background-size: 100% 11px;
+}
+
+/* Página activa: trazo verde, siempre visible */
+.header__nav-menu--active{
+    font-weight: 700;
+    background-image: url(../media/trazo-verde.svg);
+    background-size: 100% 11px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
