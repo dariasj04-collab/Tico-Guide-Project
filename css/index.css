@@ -210,20 +210,19 @@ ul, ol {
    gap: var(--size-md);
    justify-content: space-between;
    align-items: center;
+   flex-wrap: wrap;
 }
 
 .header__brand {
     display: flex;
     align-items: center;
-    gap: var(--size-sm)
-
+    gap: var(--size-sm);
 }
 
 .header__slogan {
     display: flex;
     flex-direction: column;
-  
-
+    
     & .heading--h4 {
       font-weight: 600;
     }
@@ -234,11 +233,13 @@ ul, ol {
     width: 3.375rem;
     height: 3.375rem;
     
+    
 }
 
 .header__nav {
     display: flex;
     gap: var(--size-lg);
+   
 
 }
 
@@ -360,7 +361,7 @@ ul, ol {
 
 
 .hero__search{
-   margin-top: -4rem;      /* negativo: sube 64px sobre la foto */
+    margin-top: -4rem;      
     padding: var(--size-lg);
     background-color: var(--color-surface);
     border-radius: var(--radius-card);
@@ -369,45 +370,57 @@ ul, ol {
     display: flex;
     align-items: center;
     gap: var(--size-lg);
+    flex-wrap: wrap;
 
     & h2 {
       max-width: 10rem;
     }
-
 }
 
 .form{
    display: flex;
    align-items: flex-end;
    gap: var(--size-md);
-   height: 3.25rem;
+   flex-wrap: wrap;
+   flex: 1 1 400px;
 
    & .btn {
         height: 3.25rem;
    }
 
-   
-
 }
 
-.form__field{
-    flex: 1;                /* los tres campos miden lo mismo */
+.form__field{           
     display: flex;
     flex-direction: column;
     gap: var(--size-xs);
+    flex: 1 1 160px;
   
-
     & select{
-        height: 52px;
+        height: 3.25rem;
         padding: 0 var(--size-sm);
         background-color: var(--color-mint);
-        border: 2px solid var(--color-green);
+        border: .125rem solid var(--color-green);
         border-radius: var(--radius-card);
         font: var(--font-p);
         color: var(--color-green);
-        appearance: none;
+
+        appearance: none;                                  
+        background-image: url(../media/flecha-select.svg);
+        background-repeat: no-repeat;
+        background-position: right var(--size-sm) center; 
+        background-size: 1rem;    
+    }
+
+       & select:focus-visible{
+        outline: .125rem solid transparent;
+        outline-offset: .125rem;
     }
 }
+ 
+
+
+
 
 
 
